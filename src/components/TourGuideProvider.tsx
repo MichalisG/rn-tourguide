@@ -204,7 +204,7 @@ export const TourGuideProvider = ({
             animationDuration,
             maskOffset,
             borderRadius,
-            steps
+            stepsNumber: utils.getStepNumber(steps)
           }}
         />
       </TourGuideContext.Provider>

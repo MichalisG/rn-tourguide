@@ -28,6 +28,7 @@ export interface ModalProps {
   tooltipStyle?: StyleProp<ViewStyle>
   maskOffset?: number
   borderRadius?: number
+  stepsNumber?: number
   borderRadiusObject?: BorderRadiusObject
   androidStatusBarVisible: boolean
   backdropColor: string
@@ -72,6 +73,7 @@ export class Modal extends React.Component<ModalProps, State> {
     androidStatusBarVisible: false,
     backdropColor: 'rgba(0, 0, 0, 0.4)',
     labels: {},
+    stepsNumber: 0
   }
 
   layout?: Layout = {
@@ -296,7 +298,7 @@ export class Modal extends React.Component<ModalProps, State> {
           isFirstStep={this.props.isFirstStep}
           isLastStep={this.props.isLastStep}
           currentStep={this.props.currentStep!}
-          steps={this.props.steps}
+          stepsNumber={this.props.stepsNumber}
           handleNext={this.handleNext}
           handlePrev={this.handlePrev}
           handleStop={this.handleStop}
