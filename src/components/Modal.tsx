@@ -296,6 +296,7 @@ export class Modal extends React.Component<ModalProps, State> {
           isFirstStep={this.props.isFirstStep}
           isLastStep={this.props.isLastStep}
           currentStep={this.props.currentStep!}
+          steps={this.props.steps}
           handleNext={this.handleNext}
           handlePrev={this.handlePrev}
           handleStop={this.handleStop}
