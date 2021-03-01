@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Animated, LayoutChangeEvent, StyleProp, ViewStyle } from 'react-native';
 import { BorderRadiusObject, IStep, Labels, ValueXY } from '../types';
 import { TooltipProps } from './Tooltip';
+import { TopLayerProps } from './TopLayer';
 export interface ModalProps {
     ref: any;
     currentStep?: IStep;
@@ -11,6 +12,8 @@ export interface ModalProps {
     animationDuration?: number;
     tooltipComponent: React.ComponentType<TooltipProps>;
     tooltipStyle?: StyleProp<ViewStyle>;
+    topLayerComponent: React.ComponentType<TopLayerProps>;
+    topLayerStyle?: StyleProp<ViewStyle>;
     maskOffset?: number;
     borderRadius?: number;
     stepsNumber?: number;
@@ -50,6 +53,7 @@ export declare class Modal extends React.Component<ModalProps, State> {
         easing: import("react-native").EasingFunction;
         animationDuration: number;
         tooltipComponent: any;
+        topLayerComponent: JSX.Element;
         tooltipStyle: {};
         androidStatusBarVisible: boolean;
         backdropColor: string;
@@ -78,6 +82,7 @@ export declare class Modal extends React.Component<ModalProps, State> {
     handleStop: () => void;
     renderMask: () => JSX.Element;
     renderTooltip(): JSX.Element | null;
+    renderTopLayer(): JSX.Element | null;
     render(): JSX.Element | null;
 }
 export {};

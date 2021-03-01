@@ -14,6 +14,7 @@ import { BorderRadiusObject, IStep, Labels, ValueXY } from '../types'
 import styles, { MARGIN } from './style'
 import { SvgMask } from './SvgMask'
 import { Tooltip, TooltipProps } from './Tooltip'
+import { TopLayerProps } from './TopLayer'
 
 declare var __TEST__: boolean
 
@@ -26,6 +27,8 @@ export interface ModalProps {
   animationDuration?: number
   tooltipComponent: React.ComponentType<TooltipProps>
   tooltipStyle?: StyleProp<ViewStyle>
+  topLayerComponent: React.ComponentType<TopLayerProps>
+  topLayerStyle?: StyleProp<ViewStyle>
   maskOffset?: number
   borderRadius?: number
   stepsNumber?: number
@@ -69,6 +72,7 @@ export class Modal extends React.Component<ModalProps, State> {
     easing: Easing.elastic(0.7),
     animationDuration: 400,
     tooltipComponent: Tooltip as any,
+    topLayerComponent: <></>,
     tooltipStyle: {},
     androidStatusBarVisible: false,
     backdropColor: 'rgba(0, 0, 0, 0.4)',
@@ -308,6 +312,27 @@ export class Modal extends React.Component<ModalProps, State> {
     )
   }
 
+  renderTopLayer() {
+    const { topLayerComponent: TopLayerComponent, visible } = this.props
+
+    if (!visible) {
+      return null
+    }
+
+    return (
+        <TopLayerComponent
+          isFirstStep={this.props.isFirstStep}
+          isLastStep={this.props.isLastStep}
+          currentStep={this.props.currentStep!}
+          stepsNumber={this.props.stepsNumber}
+          handleNext={this.handleNext}
+          handlePrev={this.handlePrev}
+          handleStop={this.handleStop}
+          labels={this.props.labels}
+        />
+    )
+  }
+
   render() {
     const containerVisible = this.state.containerVisible || this.props.visible
     const contentVisible = this.state.layout && containerVisible
@@ -328,6 +353,7 @@ export class Modal extends React.Component<ModalProps, State> {
             <>
               {this.renderMask()}
               {this.renderTooltip()}
+              {this.renderTopLayer()}
             </>
           )}
         </View>
