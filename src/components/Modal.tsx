@@ -314,6 +314,7 @@ export class Modal extends React.Component<ModalProps, State> {
 
   renderTopLayer() {
     const { topLayerComponent: TopLayerComponent, visible } = this.props
+    console.log("🚀 ~ file: Modal.tsx ~ line 317 ~ Modal ~ renderTopLayer ~ visible", visible)
 
     if (!visible) {
       return null
@@ -359,9 +360,10 @@ export class Modal extends React.Component<ModalProps, State> {
             <>
               {this.renderMask()}
               {this.renderTooltip()}
-              {this.renderTopLayer()}
             </>
           )}
+{          console.log("🚀 ~ file: Modal.tsx ~ line 366 ~ Modal ~ render ~ containerVisible", containerVisible)}
+          {containerVisible && this.renderTopLayer()}
         </View>
       </View>
     )
