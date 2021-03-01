@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import { IStep, Labels } from '../types';
 export interface TopLayerProps {
     isFirstStep?: boolean;
@@ -9,3 +10,4 @@ export interface TopLayerProps {
     handlePrev?(): void;
     handleStop?(): void;
 }
+export declare const TopLayer: () => JSX.Element;

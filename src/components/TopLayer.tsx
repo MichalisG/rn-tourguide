@@ -1,3 +1,4 @@
+import React from 'react'
 import { IStep, Labels } from '../types'
 
 export interface TopLayerProps {
@@ -12,12 +13,4 @@ export interface TopLayerProps {
 }
 
 // Use this component to render anything on top of the page
-export const TopLayer = ({
-  isFirstStep,
-  isLastStep,
-  handleNext,
-  handlePrev,
-  handleStop,
-  currentStep,
-  labels,
-}: TopLayerProps) => <></>
+export const TopLayer = () => <></>

@@ -53,7 +53,7 @@ export declare class Modal extends React.Component<ModalProps, State> {
         easing: import("react-native").EasingFunction;
         animationDuration: number;
         tooltipComponent: any;
-        topLayerComponent: JSX.Element;
+        topLayerComponent: any;
         tooltipStyle: {};
         androidStatusBarVisible: boolean;
         backdropColor: string;
