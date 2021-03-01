@@ -10,3 +10,14 @@ export interface TopLayerProps {
   handlePrev?(): void
   handleStop?(): void
 }
+
+// Use this component to render anything on top of the page
+export const TopLayer = ({
+  isFirstStep,
+  isLastStep,
+  handleNext,
+  handlePrev,
+  handleStop,
+  currentStep,
+  labels,
+}: TopLayerProps) => <></>

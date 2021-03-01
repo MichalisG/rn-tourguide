@@ -14,7 +14,7 @@ import { BorderRadiusObject, IStep, Labels, ValueXY } from '../types'
 import styles, { MARGIN } from './style'
 import { SvgMask } from './SvgMask'
 import { Tooltip, TooltipProps } from './Tooltip'
-import { TopLayerProps } from './TopLayer'
+import { TopLayer, TopLayerProps } from './TopLayer'
 
 declare var __TEST__: boolean
 
@@ -72,7 +72,7 @@ export class Modal extends React.Component<ModalProps, State> {
     easing: Easing.elastic(0.7),
     animationDuration: 400,
     tooltipComponent: Tooltip as any,
-    topLayerComponent: <></>,
+    topLayerComponent: TopLayer as any,
     tooltipStyle: {},
     androidStatusBarVisible: false,
     backdropColor: 'rgba(0, 0, 0, 0.4)',
