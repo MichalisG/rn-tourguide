@@ -362,7 +362,7 @@ export class Modal extends React.Component<ModalProps, State> {
               {this.renderTooltip()}
             </>
           )}
-{          console.log("🚀 ~ file: Modal.tsx ~ line 366 ~ Modal ~ render ~ containerVisible", containerVisible)}
+          {console.log("🚀 ~ file: Modal.tsx ~ line 366 ~ Modal ~ render ~ containerVisible", containerVisible)}
           {containerVisible && this.renderTopLayer()}
         </View>
       </View>
