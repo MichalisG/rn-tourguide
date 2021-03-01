@@ -320,6 +320,11 @@ export class Modal extends React.Component<ModalProps, State> {
     }
 
     return (
+      <View
+      pointerEvents='box-none'
+      key='topLayer'
+      style={this.props.topLayerStyle}
+      >
         <TopLayerComponent
           isFirstStep={this.props.isFirstStep}
           isLastStep={this.props.isLastStep}
@@ -330,6 +335,7 @@ export class Modal extends React.Component<ModalProps, State> {
           handleStop={this.handleStop}
           labels={this.props.labels}
         />
+      </View>
     )
   }
 
