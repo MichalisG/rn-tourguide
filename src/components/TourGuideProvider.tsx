@@ -8,6 +8,7 @@ import * as utils from '../utilities'
 import { Modal } from './Modal'
 import { OFFSET_WIDTH } from './style'
 import { TooltipProps } from './Tooltip'
+import { TopLayerProps } from './TopLayer'
 
 const { useMemo, useEffect, useState, useRef } = React
 
@@ -19,6 +20,7 @@ const MAX_START_TRIES = 120
 
 export interface TourGuideProviderProps {
   tooltipComponent?: React.ComponentType<TooltipProps>
+  topLayerComponent?: React.ComponentType<TopLayerProps>
   tooltipStyle?: StyleProp<ViewStyle>
   labels?: Labels
   androidStatusBarVisible?: boolean
@@ -38,6 +40,7 @@ export const TourGuideProvider = ({
   labels,
   tooltipComponent,
   tooltipStyle,
+  topLayerComponent,
   androidStatusBarVisible,
   backdropColor,
   animationDuration,
@@ -198,6 +201,7 @@ export const TourGuideProvider = ({
             currentStep,
             labels,
             tooltipComponent,
+            topLayerComponent,
             tooltipStyle,
             androidStatusBarVisible,
             backdropColor,

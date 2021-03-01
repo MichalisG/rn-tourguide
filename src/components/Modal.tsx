@@ -321,22 +321,16 @@ export class Modal extends React.Component<ModalProps, State> {
     }
 
     return (
-      <View
-      pointerEvents='box-none'
-      key='topLayer'
-      style={this.props.topLayerStyle}
-      >
-        <TopLayerComponent
-          isFirstStep={this.props.isFirstStep}
-          isLastStep={this.props.isLastStep}
-          currentStep={this.props.currentStep!}
-          stepsNumber={this.props.stepsNumber}
-          handleNext={this.handleNext}
-          handlePrev={this.handlePrev}
-          handleStop={this.handleStop}
-          labels={this.props.labels}
-        />
-      </View>
+      <TopLayerComponent
+        isFirstStep={this.props.isFirstStep}
+        isLastStep={this.props.isLastStep}
+        currentStep={this.props.currentStep!}
+        stepsNumber={this.props.stepsNumber}
+        handleNext={this.handleNext}
+        handlePrev={this.handlePrev}
+        handleStop={this.handleStop}
+        labels={this.props.labels}
+      />
     )
   }
 
