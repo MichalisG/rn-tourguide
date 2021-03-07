@@ -70,6 +70,12 @@ export const defaultSvgPath = ({
   borderRadius: number
   borderRadiusObject?: BorderRadiusObject
 }): SvgPath => {
+  const SIZE_OFFSET = {
+    RIGHT: borderRadiusObject?.offsetRight || 4,
+    LEFT: borderRadiusObject?.offsetLeft || 4,
+    BOTTOM: borderRadiusObject?.offsetBottom || 4,
+    TOP: borderRadiusObject?.offsetTop || 4
+  }
   if (radius || borderRadiusObject) {
     const borderRadiusTopRight = getBorderRadiusOrDefault(
       borderRadiusObject?.topRight,
@@ -88,18 +94,10 @@ export const defaultSvgPath = ({
       radius,
     )
 
-    return `M${position.x},${position.y}H${
-      position.x + size.x
-    } a${borderRadiusTopRight},${borderRadiusTopRight} 0 0 1 ${borderRadiusTopRight},${borderRadiusTopRight}V${
-      position.y + size.y - borderRadiusTopRight
-    } a${borderRadiusBottomRight},${borderRadiusBottomRight} 0 0 1 -${borderRadiusBottomRight},${borderRadiusBottomRight}H${
-      position.x
-    } a${borderRadiusBottomLeft},${borderRadiusBottomLeft} 0 0 1 -${borderRadiusBottomLeft},-${borderRadiusBottomLeft}V${
-      position.y +
-      (borderRadiusBottomLeft > borderRadiusTopLeft
-        ? borderRadiusTopLeft
-        : borderRadiusBottomLeft)
-    } a${borderRadiusTopLeft},${borderRadiusTopLeft} 0 0 1 ${borderRadiusTopLeft},-${borderRadiusTopLeft}Z`
+    return `M${position.x + radius},${position.y + SIZE_OFFSET.TOP}H${position.x + size.x - radius - SIZE_OFFSET.RIGHT} a${borderRadiusTopRight},${borderRadiusTopRight} 0 0 1 ${borderRadiusTopRight},${borderRadiusTopRight}V${position.y + size.y - borderRadiusTopRight - SIZE_OFFSET.BOTTOM} a${borderRadiusBottomRight},${borderRadiusBottomRight} 0 0 1 -${borderRadiusBottomRight},${borderRadiusBottomRight}H${position.x + radius + SIZE_OFFSET.LEFT} a${borderRadiusBottomLeft},${borderRadiusBottomLeft} 0 0 1 -${borderRadiusBottomLeft},-${borderRadiusBottomLeft}V${position.y
+      + (borderRadiusBottomLeft > borderRadiusTopLeft
+        ? borderRadiusTopLeft + SIZE_OFFSET.TOP
+        : borderRadiusBottomLeft + SIZE_OFFSET.TOP)} a${borderRadiusTopLeft},${borderRadiusTopLeft} 0 0 1 ${borderRadiusTopLeft},-${borderRadiusTopLeft}Z`;
   }
   return `M${position.x},${position.y}H${position.x + size.x}V${
     position.y + size.y

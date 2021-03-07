@@ -26,6 +26,10 @@ export interface BorderRadiusObject {
     topRight?: number;
     bottomRight?: number;
     bottomLeft?: number;
+    offsetLeft?: number;
+    offsetRight?: number;
+    offsetTop?: number;
+    offsetBottom?: number;
 }
 export declare type SvgPath = string;
 export interface AnimJSValue {
