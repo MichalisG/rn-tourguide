@@ -36,6 +36,9 @@ export interface ModalProps {
   androidStatusBarVisible: boolean
   backdropColor: string
   labels: Labels
+  tooltipBody?: any
+  onNext?: void
+  onPrev?: void
   easing(value: number): number
   stop(): void
   next(): void
@@ -307,6 +310,11 @@ export class Modal extends React.Component<ModalProps, State> {
           handlePrev={this.handlePrev}
           handleStop={this.handleStop}
           labels={this.props.labels}
+          tooltipTranslateY={this.state.tooltipTranslateY}
+          tooltip={this.state.tooltip}
+          tooltipBody={this.props.tooltipBody}
+          onNext={this.props.onNext}
+          onPrev={this.props.onPrev}
         />
       </Animated.View>
     )
@@ -314,7 +322,6 @@ export class Modal extends React.Component<ModalProps, State> {
 
   renderTopLayer() {
     const { topLayerComponent: TopLayerComponent, visible } = this.props
-    console.log("🚀 ~ file: Modal.tsx ~ line 317 ~ Modal ~ renderTopLayer ~ visible", visible)
 
     if (!visible) {
       return null
@@ -356,7 +363,6 @@ export class Modal extends React.Component<ModalProps, State> {
               {this.renderTooltip()}
             </>
           )}
-          {console.log("🚀 ~ file: Modal.tsx ~ line 366 ~ Modal ~ render ~ containerVisible", containerVisible)}
           {containerVisible && this.renderTopLayer()}
         </View>
       </View>

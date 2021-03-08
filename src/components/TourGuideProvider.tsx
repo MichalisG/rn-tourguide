@@ -102,7 +102,7 @@ export const TourGuideProvider = ({
   const setCurrentStep = (step?: IStep) =>
     new Promise<void>((resolve) => {
       updateCurrentStep(() => {
-        eventEmitter.emit('stepChange', step)
+        eventEmitter.emit('stepChange', {step, prevStep: currentStep})
         resolve()
         return step
       })

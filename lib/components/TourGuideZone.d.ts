@@ -13,5 +13,8 @@ export interface TourGuideZoneProps {
     keepTooltipPosition?: boolean;
     tooltipBottomOffset?: number;
     borderRadiusObject?: BorderRadiusObject;
+    tooltipBody?: React.ReactNode;
+    onNext?: void;
+    onPrev?: void;
 }
-export declare const TourGuideZone: ({ isTourGuide, zone, children, shape, text, maskOffset, borderRadius, style, keepTooltipPosition, tooltipBottomOffset, borderRadiusObject, }: TourGuideZoneProps) => JSX.Element;
+export declare const TourGuideZone: ({ isTourGuide, zone, children, shape, text, maskOffset, borderRadius, style, keepTooltipPosition, tooltipBottomOffset, borderRadiusObject, tooltipBody, onNext, onPrev }: TourGuideZoneProps) => JSX.Element;

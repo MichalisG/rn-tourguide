@@ -12,6 +12,9 @@ interface Props {
     keepTooltipPosition?: boolean;
     tooltipBottomOffset?: number;
     borderRadiusObject?: BorderRadiusObject;
+    tooltipBody?: React.ReactNode;
+    onNext?: void;
+    onPrev?: void;
 }
 export declare const Step: (props: Props) => JSX.Element;
 export {};

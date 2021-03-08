@@ -11,6 +11,11 @@ export interface TooltipProps {
   currentStep: IStep
   stepsNumber?: number
   labels?: Labels
+  tooltipTranslateY: any
+  tooltip: any
+  tooltipBody?: React.ReactNode
+  onNext?: void
+  onPrev?: void
   handleNext?(): void
   handlePrev?(): void
   handleStop?(): void
