@@ -360,10 +360,10 @@ export class Modal extends React.Component<ModalProps, State> {
           {contentVisible && (
             <>
               {this.renderMask()}
+              {this.renderTopLayer()}
               {this.renderTooltip()}
             </>
           )}
-          {containerVisible && this.renderTopLayer()}
         </View>
       </View>
     )
