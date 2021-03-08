@@ -1,4 +1,4 @@
-import * as React from 'react';
+/// <reference types="react" />
 import { IStep, Labels } from '../types';
 export interface TooltipProps {
     isFirstStep?: boolean;
@@ -8,7 +8,7 @@ export interface TooltipProps {
     labels?: Labels;
     tooltipTranslateY: any;
     tooltip: any;
-    tooltipBody?: React.ReactNode;
+    tooltipBody?: any;
     onNext?: void;
     onPrev?: void;
     handleNext?(): void;

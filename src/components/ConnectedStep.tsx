@@ -17,7 +17,7 @@ interface Props {
   borderRadius?: number
   keepTooltipPosition?: boolean
   tooltipBottomOffset?: number
-  tooltipBody?: React.ReactNode
+  tooltipBody?: any
   onNext?: void
   onPrev?: void
 }

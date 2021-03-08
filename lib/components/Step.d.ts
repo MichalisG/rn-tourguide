@@ -12,7 +12,7 @@ interface Props {
     keepTooltipPosition?: boolean;
     tooltipBottomOffset?: number;
     borderRadiusObject?: BorderRadiusObject;
-    tooltipBody?: React.ReactNode;
+    tooltipBody?: any;
     onNext?: void;
     onPrev?: void;
 }
