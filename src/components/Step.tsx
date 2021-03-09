@@ -15,7 +15,7 @@ interface Props {
   keepTooltipPosition?: boolean
   tooltipBottomOffset?: number
   borderRadiusObject?: BorderRadiusObject
-  tooltipBody?: any
+  handlersProps?: any
   onNext?: void
   onPrev?: void
 }

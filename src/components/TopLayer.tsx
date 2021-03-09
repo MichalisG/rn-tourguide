@@ -7,6 +7,7 @@ export interface TopLayerProps {
   currentStep: IStep
   stepsNumber?: number
   labels?: Labels
+  handlersProps?: any
   handleNext?(): void
   handlePrev?(): void
   handleStop?(): void

@@ -36,7 +36,7 @@ export interface ModalProps {
   androidStatusBarVisible: boolean
   backdropColor: string
   labels: Labels
-  tooltipBody?: any
+  handlersProps?: any
   onNext?: void
   onPrev?: void
   easing(value: number): number
@@ -312,7 +312,7 @@ export class Modal extends React.Component<ModalProps, State> {
           labels={this.props.labels}
           tooltipTranslateY={this.state.tooltipTranslateY}
           tooltip={this.state.tooltip}
-          tooltipBody={this.props.tooltipBody}
+          handlersProps={this.props.handlersProps}
           onNext={this.props.onNext}
           onPrev={this.props.onPrev}
         />
@@ -336,6 +336,7 @@ export class Modal extends React.Component<ModalProps, State> {
         handleNext={this.handleNext}
         handlePrev={this.handlePrev}
         handleStop={this.handleStop}
+        handlersProps={this.props.handlersProps}
         labels={this.props.labels}
       />
     )

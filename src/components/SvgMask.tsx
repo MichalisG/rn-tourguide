@@ -183,8 +183,8 @@ export class SvgMask extends Component<Props, State> {
       >
         <Svg
           pointerEvents='none'
-          width={this.state.canvasSize.x}
-          height={this.state.canvasSize.y}
+          width={this.state.canvasSize.x+5}
+          height={this.state.canvasSize.y+5}
         >
           <AnimatedSvgPath
             ref={this.mask}

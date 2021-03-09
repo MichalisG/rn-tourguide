@@ -18,7 +18,7 @@ interface TourGuideZoneByPositionProps {
   keepTooltipPosition?: boolean
   tooltipBottomOffset?: number
   text?: string
-  tooltipBody?: any;
+  handlersProps?: any;
   onNext?: void;
   onPrev?: void;
 }
@@ -38,7 +38,7 @@ export const TourGuideZoneByPosition = ({
   tooltipBottomOffset,
   borderRadiusObject,
   text,
-  tooltipBody,
+  handlersProps,
   onNext,
   onPrev
 }: TourGuideZoneByPositionProps) => {
@@ -60,7 +60,7 @@ export const TourGuideZoneByPosition = ({
           tooltipBottomOffset,
           borderRadiusObject,
           text,
-          tooltipBody,
+          handlersProps,
           onNext,
           onPrev
         }}

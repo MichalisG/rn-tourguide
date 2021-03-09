@@ -13,7 +13,7 @@ export interface TooltipProps {
   labels?: Labels
   tooltipTranslateY: any
   tooltip: any
-  tooltipBody?: any
+  handlersProps?: any
   onNext?: void
   onPrev?: void
   handleNext?(): void

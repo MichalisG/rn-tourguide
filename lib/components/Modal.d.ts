@@ -21,7 +21,7 @@ export interface ModalProps {
     androidStatusBarVisible: boolean;
     backdropColor: string;
     labels: Labels;
-    tooltipBody?: any;
+    handlersProps?: any;
     onNext?: void;
     onPrev?: void;
     easing(value: number): number;
