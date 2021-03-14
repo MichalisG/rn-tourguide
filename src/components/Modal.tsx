@@ -254,10 +254,12 @@ export class Modal extends React.Component<ModalProps, State> {
   }
 
   handleNext = () => {
+    this.state.opacity.setValue(0)
     this.props.next()
   }
 
   handlePrev = () => {
+    this.state.opacity.setValue(0)
     this.props.prev()
   }
 
